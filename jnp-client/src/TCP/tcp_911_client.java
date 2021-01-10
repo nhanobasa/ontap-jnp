@@ -15,12 +15,8 @@ import java.net.Socket;
  */
 public class tcp_911_client {
     static int UCLN(int a, int b) {
-        if (a == 0 || b == 0) return 0;
-        while (a != b) {
-            if (a > b) a -= b;
-            if (b > a) b -= a;
-        }
-        return a;
+        if(b==0) return a;
+        return UCLN(b, (a%b));
     }
     
     public static void main(String[] args) {
